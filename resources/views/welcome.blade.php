@@ -7,6 +7,21 @@
 
 @section('content')
     
-    <h1>My First Website</h1>
+    <h1>My {{ $foo }} Website</h1>
+
+    {{ $script }} <- escaping
+    {!! $script !!} <- nonescaping
+
+    <ul>
+        @foreach($tasks as $task)
+            <li>{{ $task }}</li> 
+        @endforeach
+    </ul>
+
+    <ul>
+        <?php foreach ($tasks as $task) : ?>
+            <li><?= $task; ?></li>
+        <?php endforeach; ?>
+    </ul>
 
 @endsection
